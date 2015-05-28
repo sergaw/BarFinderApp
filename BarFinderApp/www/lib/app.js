@@ -29,6 +29,8 @@ angular.module('app', ['ionic'])
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+
+
       .state('page3', {
           url: '',
           templateUrl: 'page3.html'
@@ -45,4 +47,39 @@ angular.module('app', ['ionic'])
     $urlRouterProvider.otherwise('');
 
 
-});
+})
+
+    /*
+.controller('MyCtrl', function ($scope, $timeout) {
+    $scope.myTitle = 'Template';
+
+    $scope.data = { 'volume': '33' };
+
+    var timeoutId = null;
+
+    $scope.$watch('data.volume', function () {
+
+
+        console.log('Has changed');
+
+        if (timeoutId !== null) {
+            console.log('Ignoring this movement');
+            return;
+        }
+
+        console.log('Not going to ignore this one');
+        timeoutId = $timeout(function () {
+
+            console.log('It changed recently!');
+
+            $timeout.cancel(timeoutId);
+            timeoutId = null;
+
+            // Now load data from server 
+        }, 1000);
+
+
+    });
+
+})*/;
+
