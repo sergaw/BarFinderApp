@@ -5,9 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic'])
+angular.module('App', ['ionic']);
 
-.run(function ($ionicPlatform) {
+
+App.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -21,15 +22,13 @@ angular.module('app', ['ionic'])
     });
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
+App.config(function ($stateProvider, $urlRouterProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
-
-
 
       .state('page3', {
           url: '',
@@ -49,37 +48,12 @@ angular.module('app', ['ionic'])
 
 })
 
-    /*
-.controller('MyCtrl', function ($scope, $timeout) {
-    $scope.myTitle = 'Template';
-
-    $scope.data = { 'volume': '33' };
-
-    var timeoutId = null;
-
-    $scope.$watch('data.volume', function () {
+  
+App.controller('MyCtrl', [$scope,$log, MyCtrl]); 
 
 
-        console.log('Has changed');
-
-        if (timeoutId !== null) {
-            console.log('Ignoring this movement');
-            return;
-        }
-
-        console.log('Not going to ignore this one');
-        timeoutId = $timeout(function () {
-
-            console.log('It changed recently!');
-
-            $timeout.cancel(timeoutId);
-            timeoutId = null;
-
-            // Now load data from server 
-        }, 1000);
-
-
-    });
-
-})*/;
-
+function MyCtrl($scope, $log) {
+    $scope.sendMood() = function() {
+        alert("SENT DATA!");
+    }
+}

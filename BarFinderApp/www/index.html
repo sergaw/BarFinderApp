@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="App">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
@@ -11,6 +11,7 @@
 
     <link href="lib/ionic.css" rel="stylesheet">
     <script src="lib/ionic.bundle.js"></script>
+    <script src="lib/ionic.bundle.min.js"></script>
 
     <script src="lib/app.js"></script>
 
@@ -21,7 +22,7 @@
     <!-- spacer CSS, eigentlich in css reinpacken-->
     <style type="text/css">
         .spacer {
-            padding-top: 3em;
+            padding-top: 10em;
         }
 
         .col {
@@ -33,11 +34,11 @@
 </head>
 
 
-<body ng-controller="MyCtrl">
+<body data-ng-controller="MyCtrl">
 
     <!-- Header: Choose your mood-->
     <div class="bar bar-header bar-light">
-        <h1 class="title">Choose your mood!</h1>
+        <h1 style="color:blue;font-family:Comic Sans MS;font-size:35px";class="title">Choose your mood!</h1>
     </div>
 
     <div class="spacer"></div>
@@ -65,7 +66,7 @@
     <div class="spacer"></div>
 
     <!-- Button -->
-    <a class="button button-balanced button-block">Find a bar!</a>
+    <a class="button button-balanced button-block" data-ng-click="sendMood()">Find a bar!</a>
     
     
     <!-- old -->
